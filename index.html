@@ -1,0 +1,105 @@
+
+```html
+<html>
+<head>
+  <style>
+    /* add some brown colours to the table and the button */
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      background-color: #d2b48c; /* tan */
+    }
+    th, td {
+      padding: 10px;
+    }
+    input {
+      width: 50px;
+    }
+    button {
+      background-color: #8b4513; /* saddlebrown */
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function calculate() {
+      // get the input values
+      var t4f = parseInt(document.getElementById("t4f").value) || 0;
+      var t4a = parseInt(document.getElementById("t4a").value) || 0;
+      var t4w = parseInt(document.getElementById("t4w").value) || 0;
+      var sf = parseInt(document.getElementById("sf").value) || 0;
+      var sw = parseInt(document.getElementById("sw").value) || 0;
+      var sa = parseInt(document.getElementById("sa").value) || 0;
+      var lw = parseInt(document.getElementById("lw").value) || 0;
+      var ps = parseInt(document.getElementById("ps").value) || 0;
+      var pg = parseInt(document.getElementById("pg").value) || 0;
+
+      // calculate the total price
+      var total = t4f * 75 + t4a * 50 + t4w * 100 + sf * 150 + sw * 250 + sa * 100 + lw * 200 + ps * 50 + pg * 100;
+
+      // display the total price
+      document.getElementById("total").innerHTML = "Total Price: " + total;
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Shop</h1>
+  <p>Enter the amount of things you want to buy and click the Calculate button to see the total price.</p>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>T4 Fighter</td>
+      <td>75</td>
+      <td><input type="number" id="t4f" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>T4 Archer</td>
+      <td>50</td>
+      <td><input type="number" id="t4a" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>T4 Workbench</td>
+      <td>100</td>
+      <td><input type="number" id="t4w" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Siptah Fighter</td>
+      <td>150</td>
+      <td><input type="number" id="sf" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Siptah Weapon</td>
+      <td>250</td>
+      <td><input type="number" id="sw" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Siptah Armor Piece</td>
+      <td>100</td>
+      <td><input type="number" id="sa" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Legendary Weapon</td>
+      <td>200</td>
+      <td><input type="number" id="lw" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Standard Pet</td>
+      <td>50</td>
+      <td><input type="number" id="ps" min="0" value="0"></td>
+    </tr>
+    <tr>
+      <td>Giant Pet</td>
+      <td>100</td>
+      <td><input type="number" id="pg" min="0" value="0"></td>
+    </tr>
+  </table>
+  <button onclick="calculate()">Calculate</button>
+  <p id="total">Total Price: 0</p>
+</body>
+</html>
+```
+
